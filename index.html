@@ -468,7 +468,39 @@
             </div>
         </div>
     </section>
+<!-- ===== NEWSLETTER ===== -->
+<section class="py-16 bg-slate-100 section-reveal">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+      Stay Inspired
+    </h2>
+    <p class="text-slate-600 mb-8 max-w-2xl mx-auto">
+      Get new projects, freebies, and design tips straight to your inbox. No spam, unsubscribe anytime.
+    </p>
 
+    <!-- Form -->
+    <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+      <input
+        type="email"
+        name="email"
+        placeholder="your.email@example.com"
+        required
+        class="flex-1 px-5 py-3 bg-white border border-slate-300 rounded-lg focus:outline-none focus:border-red-500 transition-colors"
+      />
+      <button
+        type="submit"
+        class="px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors disabled:opacity-50"
+      >
+        Subscribe
+      </button>
+    </form>
+
+    <!-- Success message (hidden by default) -->
+    <p id="newsletter-success" class="mt-4 text-green-600 font-medium hidden">
+      Thanks for subscribing! Check your email for confirmation.
+    </p>
+  </div>
+</section>
     <!-- Footer -->
     <footer class="bg-slate-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-6 text-center">
@@ -609,6 +641,25 @@
             e.preventDefault();
             alert('Thank you for your message! I will get back to you soon.');
         });
+
+    // Newsletter handle
+document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const email = this.email.value.trim();
+  const success = document.getElementById('newsletter-success');
+  const btn = this.querySelector('button');
+
+  btn.disabled = true;
+  btn.textContent = 'Subscribing...';
+
+  // Fake delay (replace with Mailchimp / ConvertKit / etc. later)
+  setTimeout(() => {
+    success.classList.remove('hidden');
+    this.reset();
+    btn.disabled = false;
+    btn.textContent = 'Subscribe';
+  }, 1200);
+});
     </script>
 </body>
 </html>
