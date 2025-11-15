@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Branding Projects | Noorayy</title>
+
+ <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.birds.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!--Updated <style> tag (head ke andar)-->
+<style>
+  :root {
+    --primary-900: #0f172a;
+    --primary-800: #1e293b;
+    --accent-600: #dc2626;
+    --accent-500: #ef4444;
+    --neutral-100: #f8fafc;
+    --neutral-200: #e2e8f0;
+    --neutral-600: #475569;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--neutral-100);
+    color: var(--primary-900);
+    scroll-behavior: smooth;
+  }
+  .font-display { font-family: 'Playfair Display', serif; }
+    .vanta-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+    .hero-content { position: relative; z-index: 2; }
+
+  /* Phone mockup */
+  img.phone-mock {
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Scroll reveal */
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.3s ease;
+  }
+  .section-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hero background – subtle & behind content */
+  #vanta-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;          /* behind content */
+    pointer-events: none;/* no mouse interference */
+  }
+  .hero-content {
+    position: relative;
+    z-index: 10;         /* above birds */
+  }
+</style>
+</head>
+
+<body class="bg-slate-50">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="font-display font-bold text-2xl text-slate-900 cursor-pointer" onclick="window.location.href='index.html'">Noor Fatima</div>
+      <div class="hidden md:flex space-x-8">
+        <a href="index.html#home" class="text-slate-700 hover:text-red-600 font-medium">Home</a>
+        <a href="index.html#about" class="text-slate-700 hover:text-red-600 font-medium">About</a>
+        <a href="index.html#project" class="text-slate-700 hover:text-red-600 font-medium">Projects</a>
+        <a href="index.html#contact" class="text-slate-700 hover:text-red-600 font-medium">Contact</a>
+      </div>
+      <button class="md:hidden text-slate-700"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-[60vh] flex items-center justify-center">
+    <div id="vanta-bg" class="vanta-canvas"></div>
+    <div class="hero-content text-center px-6">
+      <h1 class="font-display text-5xl lg:text-6xl font-bold mb-4 text-slate-900">Branding Projects</h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Psychology-driven identities that connect, convert, and last.</p>
+    </div>
+  </section>
+
+  <!-- BRANDING APPROACH -->
+  <section class="py-16 px-6 max-w-6xl mx-auto section-reveal">
+    <h2 class="font-display text-3xl font-bold text-slate-900 text-center mb-4">Branding Approach</h2>
+    <p class="text-slate-600 text-center max-w-3xl mx-auto mb-10">A strong brand goes beyond a logo — it connects psychology, strategy, and aesthetics.</p>
+    <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
+      <div class="bg-white p-6 rounded-xl shadow"><h3 class="font-semibold mb-2">Psychology</h3><p class="text-sm text-slate-600">Colors, fonts, shapes that trigger emotions & trust.</p></div>
+      <div class="bg-white p-6 rounded-xl shadow"><h3 class="font-semibold mb-2">Strategy</h3><p class="text-sm text-slate-600">Every decision aligns with business goals.</p></div>
+      <div class="bg-white p-6 rounded-xl shadow"><h3 class="font-semibold mb-2">Uniqueness</h3><p class="text-sm text-slate-600">Stand out while staying relevant.</p></div>
+      <div class="bg-white p-6 rounded-xl shadow"><h3 class="font-semibold mb-2">Consistency</h3><p class="text-sm text-slate-600">Cohesive language across touchpoints.</p></div>
+      <div class="bg-white p-6 rounded-xl shadow"><h3 class="font-semibold mb-2">Timelessness</h3><p class="text-sm text-slate-600">Designs that remain impactful.</p></div>
+    </div>
+  </section>
+
+  <!-- MY PROCESS -->
+  <section class="py-16 px-6 bg-slate-50 section-reveal">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-display text-3xl font-bold text-slate-900 text-center mb-4">My Process</h2>
+      <p class="text-slate-600 text-center max-w-3xl mx-auto mb-10">Turning ideas into iconic brands through a thoughtful step-by-step approach.</p>
+      <div class="grid md:grid-cols-4 gap-6 text-center">
+        <div class="bg-white p-6 rounded-xl shadow"><h3 class="font-semibold mb-2">Research</h3><p class="text-sm text-slate-600">Understanding market & audience deeply.</p></div>
+        <div class="bg-white p-6 rounded-xl shadow"><h3 class="font-semibold mb-2">Concept</h3><p class="text-sm text-slate-600">Exploring multiple creative directions.</p></div>
+        <div class="bg-white p-6 rounded-xl shadow"><h3 class="font-semibold mb-2">Design</h3><p class="text-sm text-slate-600">Building visual systems that tell your story.</p></div>
+        <div class="bg-white p-6 rounded-xl shadow"><h3 class="font-semibold mb-2">Delivery</h3><p class="text-sm text-slate-600">Final assets & brand guidelines.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GREEN LAND PROJECT -->
+  <section class="py-16 px-6 section-reveal">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-slate-900 mb-4">Green Land</h2>
+        <h3 class="font-semibold text-slate-800 mb-2">Brand Psychology</h3>
+        <p class="text-slate-600 mb-4">Earthy greens and calm browns convey growth, trust, and sustainability. Rounded typography communicates friendliness, while structured elements imply reliability.</p>
+        <h3 class="font-semibold text-slate-800 mb-2">Case Study</h3>
+        <p class="text-slate-600 mb-4">The client aimed to refresh their gardening-tools brand. Research revealed nature lovers respond to calm tones and minimalistic forms. The new identity balances serenity with modern usability.</p>
+        <h3 class="font-semibold text-slate-800 mb-2">Brand Elements</h3>
+        <ul class="list-disc list-inside text-slate-600 mb-6">
+          <li>Typography: Bernard MT Condensed</li>
+          <li>Palette: #0A541B, #35220C, #0D8424, #333338, #000000</li>
+          <li>Mockups: packaging, signage, digital</li>
+        </ul>
+      </div>
+      <img src="greenlandlogo.jpg" alt="Green Land Branding Showcase" class="phone-mock">
+    </div>
+  </section>
+
+  <!-- FAIRY TOPIA PROJECT -->
+  <section class="py-16 px-6 bg-slate-50 section-reveal">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <img src="fairytopia-main-logo.jpg" alt="Fairy Topia Branding Showcase" class="phone-mock">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-slate-900 mb-4">Fairy Topia Coffee</h2>
+        <h3 class="font-semibold text-slate-800 mb-2">Brand Psychology</h3>
+        <p class="text-slate-600 mb-4">Warm tones (#BE9B7B & #6F4436) evoke comfort and dreaminess; the circular logo creates harmony.</p>
+        <h3 class="font-semibold text-slate-800 mb-2">Case Study</h3>
+        <p class="text-slate-600 mb-4">Create a magical yet modern coffee identity. Soft fairy-like elements paired with a clean layout target both dreamers and daily coffee lovers.</p>
+        <h3 class="font-semibold text-slate-800 mb-2">Brand Elements</h3>
+        <ul class="list-disc list-inside text-slate-600 mb-6">
+          <li>Typography: Best Journey Demo</li>
+          <li>Palette: #BE9B7B, #6F4436, #DFCCAF, #854442, #3C2F2F</li>
+          <li>Mockups: cup, packaging, signage, web visuals</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEB BANNERS -->
+  <section class="py-16 px-6 section-reveal">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-display text-3xl font-bold text-slate-900 text-center mb-4">Web Banners</h2>
+      <p class="text-slate-600 text-center max-w-3xl mx-auto mb-10">Creative & sleek banners designed for marketing campaigns.</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl shadow overflow-hidden"><img src="call center we banner with shadoww.jpg" alt="Call Center Banner" class="w-full"><div class="p-4"><h3 class="font-semibold text-slate-900">Call Center Campaign</h3></div></div>
+        <div class="bg-white rounded-xl shadow overflow-hidden"><img src="veges web banner.jpg" alt="Vegetable Organic Banner" class="w-full"><div class="p-4"><h3 class="font-semibold text-slate-900">Vegetable Organic Promo</h3></div></div>
+        <div class="bg-white rounded-xl shadow overflow-hidden"><img src="with shadow.jpg" alt="Business Banner" class="w-full"><div class="p-4"><h3 class="font-semibold text-slate-900">Business Corporate Banner</h3></div></div>
+      </div>
+    </div>
+  </section>
+
+ <!-- FOOTER -->
+  <footer class="bg-slate-900 text-white py-10">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="font-display text-2xl font-bold mb-2">Noor Fatima</div>
+      <p class="text-slate-400 mb-4">Graphic Designer & Visual Storyteller</p>
+      <div class="flex justify-center space-x-6 mb-6">
+        <a href="#" class="text-slate-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+        <a href="#" class="text-slate-400 hover:text-white"><i class="fab fa-behance text-xl"></i></a>
+        <a href="#" class="text-slate-400 hover:text-white"><i class="fab fa-dribbble text-xl"></i></a>
+        <a href="#" class="text-slate-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+      </div>
+      <p class="text-slate-500 text-sm">© 2025 Noor Fatima. All rights reserved.</p>
+    </div>
+  </footer>
+
+ <script>
+    // Vanta background
+    VANTA.BIRDS({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0xf8fafc,
+      color1: 0xef4444,
+      color2: 0x475569,
+      birdSize: 1.20,
+      wingSpan: 25.00,
+      speedLimit: 3.00,
+      separation: 20.00,
+      alignment: 20.00,
+      cohesion: 20.00,
+      quantity: 3.00
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('revealed');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.section-reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
