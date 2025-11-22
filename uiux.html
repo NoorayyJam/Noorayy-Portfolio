@@ -1,45 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UI/UX Design | Noor Fatima</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.birds.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght=400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-900: #0f172a;
-            --primary-800: #1e293b;
-            --primary-700: #334155;
-            --accent-600: #dc2626;
-            --accent-500: #ef4444;
-            --neutral-100: #f8fafc;
-            --neutral-200: #e2e8f0;
-            --neutral-600: #475569;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--neutral-100);
-            color: var(--primary-900);
-            scroll-behavior: smooth;
-        }
-        .font-display { font-family: 'Playfair Display', serif; }
-        .vanta-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-        .hero-content { position: relative; z-index: 2; }
-        .project-card {
-            transition: transform 0.6s ease, box-shadow 0.6s ease;
-            transform-style: preserve-3d;
-            perspective: 1500px;
-        }
-        .project-card:hover {
-            transform: translateY(-8px) rotateX(5deg);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        
-        /* === DESKTOP NAV LINK STYLES (from reference file) === */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Design | Noor Fatima</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Included Tailwind config (as per reference file)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-900': '#0f172a',
+                        'primary-800': '#1e293b',
+                        'primary-700': '#334155',
+                        'accent-600': '#dc2626', // red-600
+                        'accent-500': '#ef4444', // red-500
+                        'neutral-100': '#f8fafc', // slate-50
+                        'neutral-200': '#e2e8f0', // slate-200
+                        'neutral-600': '#475569', // slate-600
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.birds.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght=400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-900: #0f172a;
+            --primary-800: #1e293b;
+            --primary-700: #334155;
+            --accent-600: #dc2626;
+            --accent-500: #ef4444;
+            --neutral-100: #f8fafc;
+            --neutral-200: #e2e8f0;
+            --neutral-600: #475569;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--neutral-100);
+            color: var(--primary-900);
+            scroll-behavior: smooth;
+        }
+        .font-display { font-family: 'Playfair Display', serif; }
+        .vanta-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .hero-content { position: relative; z-index: 2; }
+        .project-card {
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+            transform-style: preserve-3d;
+            perspective: 1500px;
+        }
+        .project-card:hover {
+            transform: translateY(-8px) rotateX(5deg);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* === DESKTOP NAV LINK STYLES (Underline on hover) === */
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
@@ -54,7 +77,6 @@
             background: var(--accent-500);
             transition: width 0.3s ease;
         }
-        /* Desktop: Underline only on hover */
         .nav-link:hover::after {
             width: 100%;
         }
@@ -62,13 +84,11 @@
             width: 100%;
         }
 
-        /* === MOBILE NAV LINK STYLES (for tap/active state) === */
+        /* === MOBILE NAV LINK STYLES (Underline only on active/tap) === */
         .mobile-nav-link {
             position: relative;
-            /* Ensures underline is only under text */
             display: inline-block !important; 
             transition: color 0.3s ease;
-            /* Overrides Tailwind padding/block for the underline effect */
             padding: 0 !important;
         }
         .mobile-nav-link::after {
@@ -81,12 +101,23 @@
             background: var(--accent-500);
             transition: width 0.3s ease;
         }
-        /* Mobile: Underline on active (tap) for feedback */
         .mobile-nav-link:active::after { 
             width: 100%;
         }
-        /* Removed :hover from mobile-nav-link to meet the requirement */
         
+        /* === MOBILE MENU TOGGLE (Using max-height for smooth transition) === */
+        .mobile-menu {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .mobile-menu.open {
+            max-height: 300px; /* Adjust as needed */
+            opacity: 1;
+        }
+
         .section-reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -106,22 +137,22 @@
             <div class="font-display font-bold text-2xl text-slate-900 cursor-pointer" onclick="window.location.href='index.html'">Noor Fatima</div>
             
             <div class="hidden md:flex space-x-8">
-                                <a href="index.html#home" class="nav-link text-slate-700 hover:text-red-600 font-medium">Home</a>
+                <a href="index.html#home" class="nav-link text-slate-700 hover:text-red-600 font-medium">Home</a>
                 <a href="index.html#about" class="nav-link text-slate-700 hover:text-red-600 font-medium">About</a>
-                                <a href="index.html#portfolio" class="nav-link text-slate-700 hover:text-red-600 font-medium">Portfolio</a>
+                                <a href="index.html#portfolio" class="nav-link text-slate-700 hover:text-red-600 font-medium">Portfolio</a>
                 <a href="index.html#contact" class="nav-link text-slate-700 hover:text-red-600 font-medium">Contact</a>
             </div>
             
-            <button id="mobile-menu-button" class="md:hidden text-slate-700" aria-label="Toggle navigation" aria-expanded="false">
+            <button id="mobile-menu-button" class="md:hidden text-slate-700 p-2 focus:outline-none" aria-label="Toggle navigation" aria-expanded="false">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden w-full bg-white border-t border-slate-200">
+                <div id="mobile-menu" class="mobile-menu md:hidden w-full bg-white border-t border-slate-200">
             <div class="flex flex-col space-y-2 py-3 px-6 text-center">
-                                <a href="index.html#home" class="mobile-nav-link text-slate-700 hover:text-red-600 font-medium">Home</a>
+                <a href="index.html#home" class="mobile-nav-link text-slate-700 hover:text-red-600 font-medium">Home</a>
                 <a href="index.html#about" class="mobile-nav-link text-slate-700 hover:text-red-600 font-medium">About</a>
-                                <a href="index.html#portfolio" class="mobile-nav-link text-slate-700 hover:text-red-600 font-medium">Portfolio</a>
+                                <a href="index.html#portfolio" class="mobile-nav-link text-slate-700 hover:text-red-600 font-medium">Portfolio</a>
                 <a href="index.html#contact" class="mobile-nav-link text-slate-700 hover:text-red-600 font-medium">Contact</a>
             </div>
         </div>
@@ -209,14 +240,14 @@
         document.querySelectorAll('.section-reveal').forEach(el => observer.observe(el));
 
 
-        // Mobile Menu Toggle (Masla theek karne ke liye JavaScript)
+        // Mobile Menu Toggle (Corrected JavaScript to use 'open' class)
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
         mobileMenuButton.addEventListener('click', () => {
             const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
             mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('open'); // Toggling the custom 'open' class
         });
     </script>
 </body>
