@@ -199,33 +199,32 @@
     </style>
 </head>
 <body>
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="font-display font-bold text-2xl text-slate-900">
-                    Noor Fatima
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-slate-700 hover:text-red-600 font-medium">Home</a>
-                    <a href="#about" class="nav-link text-slate-700 hover:text-red-600 font-medium">About</a>
-                    <a href="#portfolio" class="nav-link text-slate-700 hover:text-red-600 font-medium">Portfolio</a>
-                    <a href="#contact" class="nav-link text-slate-700 hover:text-red-600 font-medium">Contact</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden text-slate-700 p-2 focus:outline-none">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+  <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="font-display font-bold text-2xl text-slate-900">
+                Noor Fatima
             </div>
-        </div>
-        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-slate-100">
-            <div class="flex flex-col space-y-2 p-4">
-                <a href="#home" class="mobile-nav-link block px-3 py-2 text-slate-700 hover:bg-slate-100 rounded-lg font-medium">Home</a>
-                <a href="#about" class="mobile-nav-link block px-3 py-2 text-slate-700 hover:bg-slate-100 rounded-lg font-medium">About</a>
-                <a href="#portfolio" class="mobile-nav-link block px-3 py-2 text-slate-700 hover:bg-slate-100 rounded-lg font-medium">Portfolio</a>
-                <a href="#contact" class="mobile-nav-link block px-3 py-2 text-slate-700 hover:bg-slate-100 rounded-lg font-medium">Contact</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-slate-700 hover:text-red-600 font-medium">Home</a>
+                <a href="#about" class="nav-link text-slate-700 hover:text-red-600 font-medium">About</a>
+                <a href="#portfolio" class="nav-link text-slate-700 hover:text-red-600 font-medium">Portfolio</a>
+                <a href="#contact" class="nav-link text-slate-700 hover:text-red-600 font-medium">Contact</a>
             </div>
+            <button id="mobile-menu-btn" class="md:hidden text-slate-700 p-2 focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
         </div>
-    </nav>
-
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-slate-100">
+        <div class="flex flex-col space-y-2 p-4 text-center">
+            <a href="#home" class="mobile-nav-link block px-3 py-2 text-slate-700 hover:bg-slate-100 rounded-lg font-medium">Home</a>
+            <a href="#about" class="mobile-nav-link block px-3 py-2 text-slate-700 hover:bg-slate-100 rounded-lg font-medium">About</a>
+            <a href="#portfolio" class="mobile-nav-link block px-3 py-2 text-slate-700 hover:bg-slate-100 rounded-lg font-medium">Portfolio</a>
+            <a href="#contact" class="mobile-nav-link block px-3 py-2 text-slate-700 hover:bg-slate-100 rounded-lg font-medium">Contact</a>
+        </div>
+    </div>
+</nav>
     <section id="home" class="hero-bg min-h-screen flex items-center relative pt-20 md:pt-0">
         <div id="vanta-bg" class="vanta-canvas"></div>
         <div class="hero-content w-full">
@@ -233,7 +232,6 @@
                 <div class="space-y-8">
                     <div class="space-y-4">
                         <h1 class="font-display text-5xl lg:text-7xl font-bold leading-tight">
-                            <span class="text-slate-900">Noor Fatima:</span><br>
                             <span class="gradient-text">Graphic Designer</span>
                         </h1>
                         <p class="text-xl text-slate-600 leading-relaxed max-w-lg">
@@ -307,11 +305,8 @@
                     <div class="relative">
                         <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-slate-700 rounded-3xl transform rotate-3"></div>
                         <div class="relative bg-white rounded-3xl p-8 shadow-2xl">
-                            
-
-[Image of a professional female graphic designer profile picture or illustration]
-
-                            <img src="hero.png" 
+                        
+                        <img src="hero.png" 
                                     alt="Noor Fatima" 
                                     class="w-full h-full object-cover rounded-2xl">
                         </div>
@@ -396,9 +391,6 @@
                 <div class="project-card bg-white rounded-2xl overflow-hidden shadow-xl section-reveal" data-category="ui-ux">
                     <div class="relative h-64 overflow-hidden">
                         
-
-[Image of a clean mobile app screen design]
-
                         <img src="uiuxdesign.png" alt="UI/UX Design" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 text-center">
@@ -413,9 +405,6 @@
                 <div class="project-card bg-white rounded-2xl overflow-hidden shadow-xl section-reveal" data-category="branding">
                     <div class="relative h-64 overflow-hidden">
                         
-
-[Image of a modern logo on a mockup]
-
                         <img src="branding.png" alt="Branding" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 text-center">
